@@ -8,7 +8,7 @@ MSM_VIDC_TARGET_LIST := msm8916 msm8952 msm8996 msm8998
 #List of targets that use master side content protection
 MASTER_SIDE_CP_TARGET_LIST := msm8996 msm8998
 
-audio-hal := hardware/qcom/audio-caf/msm8998
+audio-hal := hardware/qcom/audio
 gps-hal := hardware/qcom/gps/msm8994
 
 ifeq ($(TARGET_KERNEL_VERSION),3.18)
