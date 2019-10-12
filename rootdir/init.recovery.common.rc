@@ -1,11 +1,10 @@
-on post-fs-data
+on fs
+    mount_all ./fstab.${ro.hardware}
     mkdir /data/cache
     mount none /data/cache /cache bind
     mkdir /data/cache/recovery
 
 on init
-    mount_all ./fstab.${ro.hardware}
-
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
