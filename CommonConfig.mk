@@ -103,7 +103,7 @@ EXTENDED_FONT_FOOTPRINT := false
 # BOARD_SECCOMP_POLICY += $(COMMON_PATH)/seccomp
 
 # Avoid using Sony's init
-BOARD_USES_INIT_SONY := false
+BOARD_USES_INIT_SONY := true
 
 # Init configuration for init_sony
 include $(COMMON_PATH)/init/config.mk
