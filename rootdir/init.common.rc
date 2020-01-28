@@ -50,6 +50,7 @@ service charger_healthd /sbin/healthd -c
     class core
     critical
     group root system wakelock
+    disabled
 
 on fs
     mount_all ./fstab.${ro.hardware}
