@@ -39,6 +39,8 @@ setup_mtp_adb() {
     write $GADGET_DIR/gadget1/configs/config.1/strings/0x409/configuration "mtp_adb"
     symlink $GADGET_DIR/gadget1/functions/mtp.gs0 $GADGET_DIR/gadget1/configs/config.1
     symlink $GADGET_DIR/gadget1/functions/ffs.adb $GADGET_DIR/gadget1/configs/config.1
+    start android-tools-adbd
+    sleep 2
     write $GADGET_DIR/gadget1/os_desc/use 1
     write $GADGET_DIR/gadget1/idProduct 0x5${PRODUCT_ID_SUFFIX}
     write $GADGET_DIR/gadget1/UDC ${CONTROLLER}
