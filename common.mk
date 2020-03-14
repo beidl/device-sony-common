@@ -365,12 +365,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ubuntu.widi.supported=1
 
-# Multimedia playback support
+# Ubuntu Touch Mir/hybris integration & multimedia playback support
 PRODUCT_PACKAGES += \
     libmedia_compat_layer \
     libubuntu_application_api \
     libdroidmedia \
     libui_compat_layer \
-    libsf_compat_layer
+    libsf_compat_layer \
+    libaudioflingerglue \
+    libminisf \
+    miniafservice \
+    minimediaservice
+
 
 PRODUCT_CUSTOM_IMAGE_MAKEFILES := $(COMMON_PATH)/odm.mk
