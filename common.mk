@@ -153,8 +153,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     timekeep \
     TimeKeep \
-    thermanager \
     macaddrsetup
+
+ifneq ($(filter kanuti loire yoshino,$(PRODUCT_PLATFORM)),)
+PRODUCT_PACKAGES += \
+    thermanager
+endif
 
 # QCOM GPS
 PRODUCT_PACKAGES += \
