@@ -60,6 +60,9 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 # Rotation
 MINIMEDIA_SENSORSERVER_DISABLE := 1
 
+# Enable media.audio_policy
+MINIMEDIA_AUDIOPOLICYSERVICE_ENABLE := 1
+
 # libmedia_compat_layer for 64bit
 HYBRIS_MEDIA_32_BIT_ONLY := false
 
