@@ -221,7 +221,7 @@ extern "C" {
 void set_screen_on(int) {
     if (!init_all_rqb_params())
         return;
-    set_power_mode(POWER_MODE_PERFORMANCE);
+    set_power_mode(POWER_MODE_BALANCED);
 }
 
 void set_screen_off(int) {
