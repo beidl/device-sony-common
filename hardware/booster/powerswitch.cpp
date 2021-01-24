@@ -1,5 +1,5 @@
 extern "C" {
-extern void set_screen_on(int);
+void set_screen_on(int);
 }
 
 int main(int, char**)

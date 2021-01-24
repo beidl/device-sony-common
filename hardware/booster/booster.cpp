@@ -194,15 +194,17 @@ void set_power_mode(rqb_pwr_mode_t mode)
 
 static bool init_all_rqb_params(void)
 {
-    int i, ret;
+    int i, ret = 0;
 
     if (rqb) {
         return true;
     }
 
     rqb = (struct rqbalance_params*)malloc(sizeof(struct rqbalance_params) * POWER_MODE_MAX);
-    if (!rqb)
+    if (!rqb) {
+        ALOGE("Failed to allocate memory for configuration");
         return false;
+    }
 
     for (i = 0; i < POWER_MODE_MAX; i++)
     {
@@ -214,19 +216,23 @@ static bool init_all_rqb_params(void)
         }
     }
 
-    return ret;
+    return (ret == 0);
 }
 
 extern "C" {
 void set_screen_on(int) {
-    if (!init_all_rqb_params())
+    if (!init_all_rqb_params()) {
+        ALOGE("Failed to parse configuration file");
         return;
+    }
     set_power_mode(POWER_MODE_BALANCED);
 }
 
 void set_screen_off(int) {
-    if (!init_all_rqb_params())
+    if (!init_all_rqb_params()) {
+        ALOGE("Failed to parse configuration file");
         return;
+    }
     set_power_mode(POWER_MODE_BATTERYSAVE);
 }
 }
