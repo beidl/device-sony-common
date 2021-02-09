@@ -369,6 +369,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ubuntu.widi.supported=1
 
+# Force aal camera on UT for now
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.ubuntu.camera_plugin=aal
+
 # Ubuntu Touch Mir/hybris integration & multimedia playback support
 PRODUCT_PACKAGES += \
     libmedia_compat_layer \
